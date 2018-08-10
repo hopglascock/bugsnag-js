@@ -55,6 +55,7 @@ jobs:
       install:
         - npm install
         - lerna bootstrap
+        - lerna run build
       script:
         - npm run test:unit && npm run test:types
       env: BROWSER=na
