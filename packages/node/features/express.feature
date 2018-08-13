@@ -8,7 +8,7 @@ Scenario Outline: a synchronous thrown error in a route
   And I set environment variable "NODE_VERSION" to "<node version>"
   And I have built the service "express"
   And I start the service "express"
-  And I wait for 5 seconds
+  And I wait for the app to respond on port "4312"
   Then I open the URL "http://localhost:4312/sync"
   And I wait for 2 seconds
   Then I should receive a request
@@ -33,7 +33,7 @@ Scenario Outline: an asynchronous thrown error in a route
   And I set environment variable "NODE_VERSION" to "<node version>"
   And I have built the service "express"
   And I start the service "express"
-  And I wait for 5 seconds
+  And I wait for the app to respond on port "4312"
   Then I open the URL "http://localhost:4312/async"
   And I wait for 2 seconds
   Then I should receive a request
@@ -58,7 +58,7 @@ Scenario Outline: an error passed to next(err)
   And I set environment variable "NODE_VERSION" to "<node version>"
   And I have built the service "express"
   And I start the service "express"
-  And I wait for 5 seconds
+  And I wait for the app to respond on port "4312"
   Then I open the URL "http://localhost:4312/next"
   And I wait for 2 seconds
   Then I should receive a request
@@ -83,7 +83,7 @@ Scenario Outline: a synchronous promise rejection in a route
   And I set environment variable "NODE_VERSION" to "<node version>"
   And I have built the service "express"
   And I start the service "express"
-  And I wait for 5 seconds
+  And I wait for the app to respond on port "4312"
   Then I open the URL "http://localhost:4312/rejection-sync"
   And I wait for 2 seconds
   Then I should receive a request
@@ -108,7 +108,7 @@ Scenario Outline: an asynchronous promise rejection in a route
   And I set environment variable "NODE_VERSION" to "<node version>"
   And I have built the service "express"
   And I start the service "express"
-  And I wait for 5 seconds
+  And I wait for the app to respond on port "4312"
   Then I open the URL "http://localhost:4312/rejection-async"
   And I wait for 2 seconds
   Then I should receive a request
@@ -133,7 +133,7 @@ Scenario Outline: a string passed to next(err)
   And I set environment variable "NODE_VERSION" to "<node version>"
   And I have built the service "express"
   And I start the service "express"
-  And I wait for 5 seconds
+  And I wait for the app to respond on port "4312"
   Then I open the URL "http://localhost:4312/string-as-error"
   And I wait for 2 seconds
   Then I should receive a request
@@ -158,7 +158,7 @@ Scenario Outline: throwing non-Error error
   And I set environment variable "NODE_VERSION" to "<node version>"
   And I have built the service "express"
   And I start the service "express"
-  And I wait for 5 seconds
+  And I wait for the app to respond on port "4312"
   Then I open the URL "http://localhost:4312/throw-non-error"
   And I wait for 2 seconds
   Then I should receive a request

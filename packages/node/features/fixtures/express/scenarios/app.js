@@ -26,6 +26,10 @@ app.use(function (req, res, next) {
   next()
 })
 
+app.get('/', function (req, res) {
+  res.end('ok')
+})
+
 app.get('/sync', function (req, res) {
   throw new Error('sync')
 })
